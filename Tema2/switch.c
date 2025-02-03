@@ -17,6 +17,7 @@ int main() {
     }
     */
 
+   // O switch é especialmente útil quando você tem muitas condições para verificar e deseja evitar uma longa sequência de instruções if-else-if
     printf("Escolha uma opção:\n");
     printf("1. Verificar saldo\n");
     printf("2. Fazer depósito\n");
@@ -35,6 +36,31 @@ int main() {
             break;
         default:
             printf("Opção inválida\n");
+    }
+    
+
+   //Se faz a mesmo coisa usando o "if" mas é mais trabalhoso
+    int dia = 3;
+
+    printf ("Qual o dia da semana(em numero)?\n");
+    scanf("%d", &dia);
+
+    if (dia == 1) {
+        printf("Domingo\n");
+    } else if (dia == 2) {
+        printf("Segunda-feira\n");
+    } else if (dia == 3) {
+        printf("Terça-feira\n");
+    } else if (dia == 4) {
+        printf("Quarta-feira\n");
+    } else if (dia == 5) {
+        printf("Quinta-feira\n");
+    } else if (dia == 6) {
+        printf("Sexta-feira\n");
+    } else if (dia == 7) {
+        printf("Sábado\n");
+    } else {
+        printf("Dia inválido\n");
     }
 
   return 0;
