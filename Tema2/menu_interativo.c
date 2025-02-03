@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
   int opcao;
+  int numeroSecreto, palpite;
 
   printf("Menu Principal\n");
   printf("1. Iniciar Jogo\n");
@@ -12,15 +15,22 @@ int main() {
 
   switch (opcao) {
     case 1:
-      printf("Iniciando o jogo...\n");
-      // Código para iniciar o jogo
+      srand(time(0));//gera numero aleatório
+      numeroSecreto = rand() % 10 + 1;
+      printf("Adivinhe o número (entre 1 e 10): ");
+      scanf("%d", &palpite);
+
+      if (palpite == numeroSecreto) {
+        printf("Parabéns! Você acertou!\n");
+      } else {
+        printf("Você errou. O número era %d.\n", numeroSecreto);
+      }
       break;
     case 2:
       printf("Regras do Jogo:\n");
-      printf("1. Regra 1\n");
-      printf("2. Regra 2\n");
-      printf("3. Regra 3\n");
-      // Código para exibir as regras
+      printf("1. Escolha uma opção no menu.\n");
+      printf("2. Se você escolher 'Iniciar Jogo', adivinhe o número secreto.\n");
+      printf("3. O jogo termina quando você escolhe 'Sair'.\n");
       break;
     case 3:
       printf("Saindo...\n");
